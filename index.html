@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSC Criteria Decoder | AI Tech Pros</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">AI Tech Pros</p>
+    <h1>TSC Criteria Decoder</h1>
+    <p class="lede">The SOC 2 Trust Services Criteria, translated into plain English. Search and filter all 61 criteria, see what evidence each one really needs, and take the scoping quiz to learn which categories likely apply to your business.</p>
+    <p class="disclaimer">Educational aid only. Not an audit, attestation, CPA opinion, or legal advice. Confirm your engagement scope with a licensed CPA firm.</p>
+  </div>
+</header>
+
+<nav class="tabs wrap" aria-label="Sections">
+  <button class="tab active" data-tab="explorer">Explorer</button>
+  <button class="tab" data-tab="quiz">Scoping Quiz</button>
+  <button class="tab" data-tab="compare">Compare</button>
+</nav>
+
+<main class="wrap">
+  <section id="tab-explorer" class="panel active" aria-label="Criteria explorer">
+    <div class="controls">
+      <input type="search" id="search" placeholder="Search by ID, title, or keyword (try: access, breach, CC6.6)" aria-label="Search criteria">
+      <div class="filters">
+        <label>Category
+          <select id="filter-category">
+            <option value="">All categories</option>
+            <option>Security</option>
+            <option>Availability</option>
+            <option>Processing Integrity</option>
+            <option>Confidentiality</option>
+            <option>Privacy</option>
+          </select>
+        </label>
+        <label>Series
+          <select id="filter-series">
+            <option value="">All series</option>
+          </select>
+        </label>
+        <label>Priority
+          <select id="filter-priority">
+            <option value="">All priorities</option>
+            <option value="critical">Critical</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <p class="count" id="count"></p>
+    <div id="results" class="cards"></div>
+  </section>
+
+  <section id="tab-quiz" class="panel" aria-label="Scoping quiz">
+    <h2>Which categories do I need?</h2>
+    <p>Answer six plain-English questions about your business. The decoder recommends which Trust Services categories likely belong in your SOC 2 scope, with reasoning you can share with your CPA firm. Security is always in scope: the Common Criteria apply to every SOC 2 engagement.</p>
+    <form id="quiz-form">
+      <fieldset>
+        <legend>1. Do customers, contracts, or SLAs require uptime or availability commitments?</legend>
+        <label><input type="radio" name="q1" value="yes"> Yes</label>
+        <label><input type="radio" name="q1" value="no"> No</label>
+      </fieldset>
+      <fieldset>
+        <legend>2. Do you process transactions, calculations, or reports that customers rely on to be correct?</legend>
+        <label><input type="radio" name="q2" value="yes"> Yes</label>
+        <label><input type="radio" name="q2" value="no"> No</label>
+      </fieldset>
+      <fieldset>
+        <legend>3. Do you store or handle data that customers call confidential?</legend>
+        <label><input type="radio" name="q3" value="yes"> Yes</label>
+        <label><input type="radio" name="q3" value="no"> No</label>
+      </fieldset>
+      <fieldset>
+        <legend>4. Do you collect, store, or process personal information about individuals?</legend>
+        <label><input type="radio" name="q4" value="yes"> Yes</label>
+        <label><input type="radio" name="q4" value="no"> No</label>
+      </fieldset>
+      <fieldset>
+        <legend>5. Are you a SaaS, cloud, or hosted-service provider?</legend>
+        <label><input type="radio" name="q5" value="yes"> Yes</label>
+        <label><input type="radio" name="q5" value="no"> No</label>
+      </fieldset>
+      <fieldset>
+        <legend>6. Do enterprise customers or RFPs ask you for a SOC 2 report?</legend>
+        <label><input type="radio" name="q6" value="yes"> Yes</label>
+        <label><input type="radio" name="q6" value="no"> No</label>
+      </fieldset>
+      <button type="submit" class="btn">Get my recommended scope</button>
+    </form>
+    <div id="quiz-result" class="quiz-result" hidden></div>
+    <p class="disclaimer">This is guidance, not a scoping decision. Confirm your engagement scope with a licensed CPA firm before committing to categories.</p>
+  </section>
+
+  <section id="tab-compare" class="panel" aria-label="Category comparison">
+    <h2>Criteria counts at a glance</h2>
+    <p>Security's 33 Common Criteria are mandatory in every SOC 2. The other four categories are optional and are added only when your commitments and business require them.</p>
+    <div id="compare" class="compare"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Built by AI Tech Pros. Dataset: <a href="https://github.com/nehemiah313/tsc-dataset">github.com/nehemiah313/tsc-dataset</a></p>
+    <p class="disclaimer">Educational aid only. Not an audit, attestation, CPA opinion, or legal advice.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
