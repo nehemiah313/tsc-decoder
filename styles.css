@@ -112,3 +112,4 @@ body {
 .compare .bar { height: 10px; background: var(--accent); border-radius: 5px; }
 .site-footer { border-top: 1px solid var(--border); padding: 24px 0 48px; color: var(--muted); font-size: .9rem; }
 .site-footer a { color: var(--accent); }
+.site-footer .storage-note { font-size: .8rem; }
